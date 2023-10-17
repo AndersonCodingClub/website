@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Anderson Coding</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css')}}">
+        <style>
+            body {
+                font-size: 17px;
+            }
+            
+            #form-container {
+                text-align: center;
+                margin-top: 4vh;
+            }
+
+            #google-form {
+                width: 75vw;
+                height: 75vh;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="nav-bar">
+            <a href="/" class="unset-a"><img class="logo" src="{{ url_for('static', filename='images/temp_logo.jpeg') }}"></a>
+            <div class="option-container">
+                <a href="/about" class="unset-a option-text">About Us</a>
+                <a href="/schedule" class="unset-a option-text">Schedule</a>
+                <a href="/members" class="unset-a option-text">Members </a>
+                <a href="/register" class="unset-a option-text">Sign Up</a>
+            </div>
+        </div>
+
+        <div id="form-container">
+            <iframe id="google-form" src="https://docs.google.com/forms/d/e/1FAIpQLScr4cckzGyf3QDkR-GuL1f4dPMnEYAVyNjHT7_4f5jXZDgFAw/viewform?usp=sf_link"></iframe>
+        </div>
+    </body>
+</html>
