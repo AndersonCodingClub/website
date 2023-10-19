@@ -1,7 +1,25 @@
 body {
-    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Lato', sans-serif;
+    flex-direction: column;
 }
 
+
+#memberLeft {
+      margin-left: 8vw;
+      margin-right: 8vw; 
+      width: 500px;
+}
+#memberRight {
+      margin-left: 8vw;
+      margin-right: 8vw;
+      width: 500px;
+}
+table {
+    font-family: 'Lato', sans-serif; /* Apply the Lato font to the table */
+}
+th, td {
+    font-family: 'Lato', sans-serif; /* Apply the Lato font to table headers and data cells */
+}
 #nav-bar {
     display: flex;
     margin-top: .2vh;

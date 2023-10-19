@@ -6,15 +6,13 @@ body {
 
 #nav-bar {
     display: flex;
-    /* padding-left: 5vw; */
-    width: 100vw;
+    margin-left: 5vw;
     background-color: white;
 }
 
 #content {
-    margin-left: 5vw;
-    margin-right: 5vw;
-    height: 100vh;
+    margin-left: 8vw;
+    margin-right: 8vw;
     background-color: white;
 }
 

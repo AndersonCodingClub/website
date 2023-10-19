@@ -38,3 +38,15 @@ body {
 .option-text:hover {
     opacity: 0.5;
 }
+
+#copy-container {
+    margin-top: 15vh;
+    margin-left: 5vw;
+    width: 45vw;
+    height: 30vh;
+}
+
+.title-text {
+    font-size: 55px;
+    font-weight: 500;
+}
