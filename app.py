@@ -13,7 +13,7 @@ def about():
 
 @app.route('/schedule')
 def schedule():
-    return 'Schedule'
+    return render_template('schedule.html')
 
 @app.route('/members')
 def members():
@@ -26,3 +26,6 @@ def register():
 
 if __name__ == '__main__':
     app.run(debug=True)
+    
+    
+#localhost:5000
