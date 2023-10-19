@@ -1,0 +1,52 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 17px;
+    overflow: hidden;
+}
+
+#nav-bar {
+    display: flex;
+    margin-top: .2vh;
+    margin-left: 5vw;
+}
+
+.logo {
+    width: 150px;
+    height: 120px;
+}
+
+.logo:hover {
+    opacity: 0.5;
+}
+
+.unset-a {
+    all: unset;
+}
+
+.unset-a:hover {
+    cursor: pointer;
+}
+
+.option-container {
+    margin-top: 5vh;
+}
+
+.option-text {
+    margin-left: 5vw;
+    font-size: 20px;
+}
+
+.option-text:hover {
+    opacity: 0.5;
+}
+
+#form-container {
+    text-align: center;
+    margin-top: 4vh;
+}
+
+#google-form {
+    width: 75vw;
+    height: 75vh;
+    border: none;
+}

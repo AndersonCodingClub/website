@@ -15,9 +15,13 @@ def about():
 def schedule():
     return render_template('schedule.html')
 
+@app.route('/projects')
+def projects():
+    return 'Projects'
+
 @app.route('/members')
 def members():
-    return 'Members'
+    return render_template('members.html')
 
 @app.route('/register')
 def register():

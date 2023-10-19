@@ -5,25 +5,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Anderson Coding</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css')}}">
-        <style>
-            body {
-                font-size: 17px;
-            }
-            
-            #form-container {
-                text-align: center;
-                margin-top: 4vh;
-            }
-
-            #google-form {
-                width: 75vw;
-                height: 75vh;
-            }
-        </style>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css')}}">
     </head>
     <body>
-        <div id="nav-bar">
+        <div id="nav-bar" style="background-color: white;">
             <a href="/" class="unset-a"><img class="logo" src="{{ url_for('static', filename='images/temp_logo.jpeg') }}"></a>
             <div class="option-container">
                 <a href="/about" class="unset-a option-text">About Us</a>
@@ -36,8 +21,6 @@
         <div id="form-container">
             <iframe id="google-form" src="https://docs.google.com/forms/d/e/1FAIpQLScr4cckzGyf3QDkR-GuL1f4dPMnEYAVyNjHT7_4f5jXZDgFAw/viewform?usp=sf_link"></iframe>
         </div>
-
-        <h1 style = "background-color: #3944BC;"> </h1>
-            <p sytle = "background-color: #3944BC"> </p>
+        <div id="page-bottom"></div>
     </body>
 </html>

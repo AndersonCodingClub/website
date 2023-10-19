@@ -1,0 +1,49 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    /* background: linear-gradient(90deg, rgba(0,159,255,0.7) 10%, rgba(0,94,255,0.7) 56%, rgba(0,44,255,0.7) 92%); */
+
+}
+
+#nav-bar {
+    display: flex;
+    /* padding-left: 5vw; */
+    width: 100vw;
+    background-color: white;
+}
+
+#content {
+    margin-left: 5vw;
+    margin-right: 5vw;
+    height: 100vh;
+    background-color: white;
+}
+
+.logo {
+    width: 150px;
+    height: 120px;
+}
+
+.logo:hover {
+    opacity: 0.5;
+}
+
+.unset-a {
+    all: unset;
+}
+
+.unset-a:hover {
+    cursor: pointer;
+}
+
+.option-container {
+    margin-top: 5vh;
+}
+
+.option-text {
+    margin-left: 5vw;
+    font-size: 20px;
+}
+
+.option-text:hover {
+    opacity: 0.5;
+}

@@ -1,5 +1,6 @@
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    background: linear-gradient(90deg, rgba(0,159,255,1) 10%, rgba(0,94,255,1) 56%, rgba(0,44,255,1) 92%);
 }
 
 #nav-bar {
