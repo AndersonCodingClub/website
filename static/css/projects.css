@@ -1,18 +1,13 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-
+    font-size: 17px;
+    overflow: hidden;
 }
 
 #nav-bar {
     display: flex;
+    margin-top: .2vh;
     margin-left: 5vw;
-    background-color: white;
-}
-
-#content {
-    margin-left: 8vw;
-    margin-right: vw;
-    background-color: white;
 }
 
 .logo {

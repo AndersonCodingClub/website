@@ -1,6 +1,7 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     background: linear-gradient(90deg, rgba(0,159,255,1) 10%, rgba(0,94,255,1) 56%, rgba(0,44,255,1) 92%);
+    color: white;
 }
 
 #nav-bar {
@@ -40,13 +41,24 @@ body {
 }
 
 #copy-container {
-    margin-top: 15vh;
-    margin-left: 5vw;
+    margin-top: 12vh;
+    margin-left: 8vw;
     width: 45vw;
     height: 30vh;
 }
 
 .title-text {
-    font-size: 55px;
+    font-size: 65px;
     font-weight: 500;
+}
+
+.caption-container {
+    margin-top: -2vh;
+    width: 38vw;
+}
+
+.caption-text {
+    font-size: 20px;
+    color: rgb(243, 243, 243);
+    line-height: 1.3;
 }

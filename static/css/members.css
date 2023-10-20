@@ -1,19 +1,36 @@
 body {
-    font-family: 'Lato', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     flex-direction: column;
 }
 
 
-#memberLeft {
-      margin-left: 8vw;
-      margin-right: 8vw; 
-      width: 500px;
+.row {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-left: 8%;
+    margin-bottom: 20vh;
 }
-#memberRight {
-      margin-left: 8vw;
-      margin-right: 8vw;
-      width: 500px;
+
+.member {
+    margin: 3vw;
+    background-color: rgb(186, 186, 186);
+    width: 35%;
+    height: 10vh;
+    border-radius: 30px;
+    padding: 30px;
+    transition: all .3s ease-in-out;
+    filter: drop-shadow(4px 5px 3px rgb(55, 54, 54));
 }
+
+.member:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    background-color: rgb(200, 200, 200);
+    filter: drop-shadow(0px 0px 0px white);
+}
+
 table {
     font-family: 'Lato', sans-serif; /* Apply the Lato font to the table */
 }
