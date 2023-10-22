@@ -1,6 +1,6 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-    background: linear-gradient(90deg, rgba(0,159,255,1) 10%, rgba(0,94,255,1) 56%, rgba(0,44,255,1) 92%);
+    background: linear-gradient(90deg, rgba(0,159,255,.7) 10%, rgba(0,94,255,.7) 56%, rgba(0,44,255,.7) 92%);
 }
 
 #page-body {
@@ -38,6 +38,10 @@ body {
     width: 30vw;
 }
 
+.list-item {
+    margin-bottom: 5px;
+}
+
 .logo {
     width: 100px;
     height: 110px;
@@ -47,13 +51,13 @@ body {
     margin-top: 5px
 }
 
+.logo:hover {
+    opacity: 0.5;
+}
+
 .helpful-diagram {
     width: 40vw;
     height: 50vh;
-}
-
-.logo:hover {
-    opacity: 0.5;
 }
 
 .unset-a {
