@@ -10,7 +10,7 @@
     </head>
     <body>
         <div id="nav-bar">
-            <a href="/" class="unset-a"><img class="logo" src="{{ url_for('static', filename='images/temp_logo.jpeg') }}"></a>
+            <a href="/" class="unset-a"><img class="logo" src="{{ url_for('static', filename='images/transparent_temp_logo.png') }}"></a>
             <div class="option-container">
                 <a href="/about" class="unset-a option-text">About Us</a>
                 <a href="/schedule" class="unset-a option-text">Schedule</a>
@@ -20,19 +20,23 @@
             </div>
         </div>
 
-        <div id="content">
-            <h1 id="page-title">About Us</h1>
-            
-            <div id="explanations">
-                <h2>Purpose:</h2>
-                <p>This organization was founded in order to have a safe space for everyone to express themselves through code, and compete in hackathons and other coding competitions.</p>
+        <div id="page-body">
+            <div id="content">
+                <h1 id="page-title">About Us</h1>
+                
+                <div id="explanations">
+                    <h2>Purpose:</h2>
+                    <p>This organization was founded in order to have a safe space for everyone to express themselves through code, and compete in hackathons and other coding competitions.</p>
 
-                <h2>Competitions:</h2>
-                <p>We compete in hackathons throughout the year, and create projects in between to practice. Hackathons are usually over the course of a weekend, where you have to crunch to make a high-quality project as fast as you can. Prize pools are usually in the thousands of dollars, and winning events can make your college applications stronger.</p>
+                    <h2>Competitions:</h2>
+                    <p>We compete in hackathons throughout the year, and create projects in between to practice. Hackathons are usually over the course of a weekend, where you have to crunch to make a high-quality project as fast as you can. Prize pools are usually in the thousands of dollars, and winning events can make your college applications.</p>
 
-                <h2>Meetings and Structure:</h2>
-                <p>Because of team size restrictions, the club is split into several teams. While we will have occasional meetings with the entire club to stay on top of projects and competition schedules, each individual team is free to work on their own project and schedule their own meetings as they please.</p>
+                    <h2>Meetings and Structure:</h2>
+                    <p>Because of team size restrictions, the club is split into several teams. While we will have occasional meetings with the entire club to stay on top of projects and competition schedules, each individual team is free to work on their own project and schedule their own meetings as they please.</p>
+                </div>
             </div>
+
+            <img class="helpful-diagram" src="{{ url_for('static', filename='images/helpful-diagram.png') }}">
         </div>
     </body>
 </html>

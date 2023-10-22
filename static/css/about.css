@@ -1,23 +1,55 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    background: linear-gradient(90deg, rgba(0,159,255,1) 10%, rgba(0,94,255,1) 56%, rgba(0,44,255,1) 92%);
+}
 
+#page-body {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 #nav-bar {
     display: flex;
     margin-left: 5vw;
-    background-color: white;
+    margin-right: 5vw;
+    background-color: rgba(255, 255, 255, .8);
+    border-radius: 25px;
+    align-items: normal;
+    transition: all .2s ease-in-out;
+}
+
+#nav-bar:hover {
+    background-color: rgba(255, 255, 255, .85);
+    transform:scale(1.001);
+    transition: all .2s ease-in-out;
 }
 
 #content {
-    margin-left: 8vw;
-    margin-right: vw;
-    background-color: white;
+    margin-left: 5vw;
+    margin-right: 8vw;
+    background-color: rgba(255, 255, 255, .8);
+    border-radius: 25px;
+    margin-top: 15px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    width: 30vw;
 }
 
 .logo {
-    width: 150px;
-    height: 120px;
+    width: 100px;
+    height: 110px;
+    object-fit: cover;
+    margin-left: 20px;
+    margin-bottom: -5px;
+    margin-top: 5px
+}
+
+.helpful-diagram {
+    width: 40vw;
+    height: 50vh;
 }
 
 .logo:hover {
@@ -33,12 +65,15 @@ body {
 }
 
 .option-container {
-    margin-top: 5vh;
+    margin-top: 45px;
 }
 
 .option-text {
     margin-left: 5vw;
-    font-size: 20px;
+    font-size: 20px;  
+    padding-top: 20px;
+    padding-bottom: 20px;
+
 }
 
 .option-text:hover {
