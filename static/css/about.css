@@ -1,6 +1,6 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-    background: linear-gradient(90deg, rgba(0,159,255,.7) 10%, rgba(0,94,255,.7) 56%, rgba(0,44,255,.7) 92%);
+    background: linear-gradient(90deg, rgb(255, 177, 31) 10%, rgb(255, 153, 0) 56%, rgb(255, 98, 0) 92%);
 }
 
 #page-body {
@@ -11,18 +11,15 @@ body {
 
 #nav-bar {
     display: flex;
+    margin-top: .2vh;
     margin-left: 5vw;
-    margin-right: 5vw;
-    background-color: rgba(255, 255, 255, .8);
-    border-radius: 25px;
-    align-items: normal;
-    transition: all .2s ease-in-out;
+    color: white;
 }
 
-#nav-bar:hover {
-    background-color: rgba(255, 255, 255, .85);
-    transform:scale(1.001);
-    transition: all .2s ease-in-out;
+.logo {
+    width: 150px;
+    height: 120px;
+    filter: brightness(100);
 }
 
 #content {
@@ -30,7 +27,7 @@ body {
     margin-right: 8vw;
     background-color: rgba(255, 255, 255, .8);
     border-radius: 25px;
-    margin-top: 15px;
+    margin-top: 30px;
     padding-left: 50px;
     padding-right: 50px;
     padding-top: 5px;
@@ -40,15 +37,6 @@ body {
 
 .list-item {
     margin-bottom: 5px;
-}
-
-.logo {
-    width: 100px;
-    height: 110px;
-    object-fit: cover;
-    margin-left: 20px;
-    margin-bottom: -5px;
-    margin-top: 5px
 }
 
 .logo:hover {

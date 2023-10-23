@@ -1,11 +1,15 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: 17px;
+    background: linear-gradient(90deg, rgb(255, 177, 31) 10%, rgb(255, 153, 0) 56%, rgb(255, 98, 0) 92%);
+
 }
 
 #form-container {
     text-align: center;
     margin-top: 4vh;
+    border-radius: 25px;
+    background-color: rgba(255,255,255,1);
 }
 
 #google-form {
@@ -37,7 +41,7 @@ body {
 }
 
 .option-container {
-    margin-top: 5vh;
+    margin-top: 45px;
 }
 
 .option-text {
