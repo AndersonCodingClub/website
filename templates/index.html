@@ -27,27 +27,71 @@
             </div>
             <div id="animation-container">
                 <div class="random-characters">
-                    LMNOFDSJFJDSKJFLKSDJ
                 </div>
             </div>
         </div>
         <script>
             const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
             const charLength = chars.length;
-            const container = document.createElement('div'); // create a new div for characters
-            container.classList.add('random-characters'); // add class to the div
-            
-            document.querySelector('#animation-container').appendChild(container); // append the div to animation-container
-            
+            const container = document.querySelector('#animation-container');
+            const duration = 1000; // duration for the character change in milliseconds
+            const stepTime = 50; // time for each step in milliseconds
+            const steps = duration / stepTime;
+
+            let currentLineLength = 15; // starting line length
+            let targetLineLength = getRandomLineLength(); // initial target length
+
+            let currentLine = createNewLine(); // Create the initial line
+
             for (let i = 0; i < 200; i++) {
                 const randomChar = chars.charAt(Math.floor(Math.random() * charLength));
-                container.innerText += randomChar; // add characters to the line
-            
-                // After every 5-15 characters (you can adjust this range), start a new line with a random width
-                if (i % Math.floor(Math.random() * 10 + 5) === 0 && i !== 0) {
-                    container.innerText += "\n"; // start a new line
+                const charSpan = document.createElement('span');
+                charSpan.textContent = randomChar;
+                charSpan.dataset.targetChar = chars.charAt(Math.floor(Math.random() * charLength)); // store the target character
+
+                currentLine.appendChild(charSpan);
+
+                if (i % Math.floor(currentLineLength) === 0 && i !== 0) {
+                    currentLine = createNewLine();
                 }
-            }            
+            }
+
+            // Start the interpolation
+            setInterval(() => {
+                // Interpolate the line length
+                currentLineLength = interpolateValue(currentLineLength, targetLineLength, 1/steps);
+                if (Math.abs(currentLineLength - targetLineLength) <= 1) {
+                    targetLineLength = getRandomLineLength();
+                }
+
+                // Interpolate the characters
+                container.querySelectorAll('span').forEach((span, i) => {
+                    const currentCharIndex = chars.indexOf(span.textContent);
+                    const targetCharIndex = chars.indexOf(span.dataset.targetChar);
+                    let newCharIndex = interpolateChar(currentCharIndex, targetCharIndex, 1/steps);
+
+                    span.textContent = chars.charAt(newCharIndex);
+                });
+            }, stepTime);
+
+            function interpolateChar(start, end, t) {
+                return Math.round(start + (end - start) * t);
+            }
+
+            function interpolateValue(start, end, t) {
+                return start + (end - start) * t;
+            }
+
+            function getRandomLineLength() {
+                return 10 + Math.floor(Math.random() * 15); // returns a random number between 10 and 25
+            }
+
+            function createNewLine() {
+                const lineDiv = document.createElement('div');
+                lineDiv.style.marginLeft = `${Math.random() * 50}px`; // Assign a random margin to the line. You can adjust the range.
+                container.appendChild(lineDiv);
+                return lineDiv;
+            }
         </script>
     </body>
 </html>
