@@ -18,11 +18,36 @@
                 <a href="/register" class="unset-a option-text">Sign Up</a>
             </div>
         </div>
-        <div id="copy-container">
-            <p class="title-text">Competitive Coding— Reimagined</p>
-            <div class="caption-container">
-                <p class="caption-text">We are a High School team based out of Austin, Texas, changing the way teens interact with computer science.</p>
+        <div id="content-container">
+            <div id="copy-container">
+                <p class="title-text">Competitive Coding— Reimagined</p>
+                <div class="caption-container">
+                    <p class="caption-text">We are a High School team based out of Austin, Texas, changing the way teens interact with computer science.</p>
+                </div>
+            </div>
+            <div id="animation-container">
+                <div class="random-characters">
+                    LMNOFDSJFJDSKJFLKSDJ
+                </div>
             </div>
         </div>
+        <script>
+            const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            const charLength = chars.length;
+            const container = document.createElement('div'); // create a new div for characters
+            container.classList.add('random-characters'); // add class to the div
+            
+            document.querySelector('#animation-container').appendChild(container); // append the div to animation-container
+            
+            for (let i = 0; i < 200; i++) {
+                const randomChar = chars.charAt(Math.floor(Math.random() * charLength));
+                container.innerText += randomChar; // add characters to the line
+            
+                // After every 5-15 characters (you can adjust this range), start a new line with a random width
+                if (i % Math.floor(Math.random() * 10 + 5) === 0 && i !== 0) {
+                    container.innerText += "\n"; // start a new line
+                }
+            }            
+        </script>
     </body>
 </html>
