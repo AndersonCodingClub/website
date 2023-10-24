@@ -1,14 +1,20 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: 17px;
-    background: linear-gradient(90deg, rgb(255, 177, 31) 10%, rgb(255, 153, 0) 56%, rgb(255, 98, 0) 92%);
+    background: rgb(200,230,201);
+    background: linear-gradient(90deg, rgba(200,230,201,1) 10%, rgba(102,187,106,1) 92%);
+}
 
+#content-container {
+    display: flex;
+    justify-content: center;
 }
 
 #form-container {
-    text-align: center;
-    margin-top: 4vh;
+    margin-top: 2.5vh;
     border-radius: 25px;
+    width: fit-content;
+    padding: 20px;
     background-color: rgba(255,255,255,1);
 }
 
