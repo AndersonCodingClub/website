@@ -2,6 +2,7 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: 17px;
     overflow: hidden;
+    overflow-y: auto;
 }
 
 #nav-bar {
@@ -37,4 +38,84 @@ body {
 
 .option-text:hover {
     opacity: 0.5;
+}
+
+.project-container {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    justify-content: center;
+}
+
+.project {
+    margin: 3vw;
+    background-color: rgba(212, 228, 255, 1);
+    width: 500px;
+    height: 500px;
+    border-radius: 30px;
+    padding: 30px;
+    padding-top: 10px;
+    padding-bottom: 50px;
+    transition: all .3s ease-in-out;
+    text-align: center;
+}
+
+.project-title {
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.date-text {
+    margin-top: 0px;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.description {
+    line-height: 1.5;
+}
+
+.bottom-section {
+    margin-top: 3.5vh;
+}
+
+.name-tile-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+.container-centered {
+    display: flex;
+    justify-content: center;
+}
+
+.name-tile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1vw;
+    background-color:  rgb(253, 253, 253);
+    width: 75px;
+    height: 12px;
+    border-radius: 20px;
+    padding: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    transition: all 7px ease-in-out;
+    flex-shrink: 0;
+}
+
+.bottom-row {
+    margin-top: 35px;
+}
+
+.project-link {
+    all: unset;
+}
+
+.project-link:hover {
+    cursor: pointer;
+    color: blue;
 }

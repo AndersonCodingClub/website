@@ -2,17 +2,24 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: 17px;
     overflow: hidden;
+    overflow-y: auto;
+    background: linear-gradient(90deg, rgba(29,160,187,1) 0%, rgba(74,73,143,1) 52%, rgba(45,43,80,1) 100%);
+
 }
 
 #nav-bar {
     display: flex;
     margin-top: .2vh;
     margin-left: 5vw;
+    background-color: none;
+    color: white;
+    filter: brightness(100);
 }
 
 .logo {
     width: 150px;
     height: 120px;
+    color: white;
 }
 
 .logo:hover {
@@ -42,11 +49,19 @@ body {
 
 #form-container {
     text-align: center;
-    margin-top: 4vh;
+    margin-top: 3.25vh;
+    
+    
 }
 
 #google-form {
     width: 75vw;
-    height: 75vh;
+    height: 1350px;
+    border-radius: 30px;
+    padding: 30px;
+    padding-top: 10px;
+    padding-bottom: 50px;
+    transition: all .75s ease-in-out;
+    background-color: white;
     border: none;
 }
