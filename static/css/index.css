@@ -2,6 +2,7 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     background: linear-gradient(90deg, rgba(0,159,255,1) 10%, rgba(0,94,255,1) 56%, rgba(0,44,255,1) 92%);
     color: white;
+    overflow: hidden;
 }
 
 #nav-bar {
@@ -47,15 +48,17 @@ body {
 }
 
 #copy-container {
-    margin-top: 12vh;
+    margin-top: 8vh;
     margin-left: 8vw;
-    width: 45vw;
+    width: 55vw;
     height: 30vh;
 }
 
 #animation-container {
-    margin-top: 20vh;
-    margin-left: 10vw;
+    font-family: 'Courier New', Courier, monospace;
+    margin-top: 9vh;
+    margin-left: -30vw;
+    color: yellow;
 }
 
 .title-text {

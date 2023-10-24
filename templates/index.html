@@ -31,6 +31,7 @@
             </div>
         </div>
         <script>
+            // Constants
             const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
             const charLength = chars.length;
             const container = document.querySelector('#animation-container');
@@ -38,60 +39,92 @@
             const stepTime = 50; // time for each step in milliseconds
             const steps = duration / stepTime;
 
-            let currentLineLength = 15; // starting line length
-            let targetLineLength = getRandomLineLength(); // initial target length
+            // Data for the shape
+            const lightningShape = [
+                11, 14, 18, 17, 14, 10, 5, 9, 15,
+                18, 14, 9, 6, 12, 18, 15,
+                10, 5, 12, 17, 19, 16,
+                11, 6, 14, 19, 18, 13,
+                9, 14, 20, 17, 13, 11, 9
+            ];
+        
+            const increment = 20;
+            const maxMargin = lightningShape.length * increment;
+            
+            const margins = lightningShape.map((_, index) => maxMargin - (index * increment));
+            
 
-            let currentLine = createNewLine(); // Create the initial line
-
-            for (let i = 0; i < 200; i++) {
-                const randomChar = chars.charAt(Math.floor(Math.random() * charLength));
-                const charSpan = document.createElement('span');
-                charSpan.textContent = randomChar;
-                charSpan.dataset.targetChar = chars.charAt(Math.floor(Math.random() * charLength)); // store the target character
-
-                currentLine.appendChild(charSpan);
-
-                if (i % Math.floor(currentLineLength) === 0 && i !== 0) {
-                    currentLine = createNewLine();
-                }
-            }
-
-            // Start the interpolation
-            setInterval(() => {
-                // Interpolate the line length
-                currentLineLength = interpolateValue(currentLineLength, targetLineLength, 1/steps);
-                if (Math.abs(currentLineLength - targetLineLength) <= 1) {
-                    targetLineLength = getRandomLineLength();
-                }
-
-                // Interpolate the characters
-                container.querySelectorAll('span').forEach((span, i) => {
-                    const currentCharIndex = chars.indexOf(span.textContent);
-                    const targetCharIndex = chars.indexOf(span.dataset.targetChar);
-                    let newCharIndex = interpolateChar(currentCharIndex, targetCharIndex, 1/steps);
-
-                    span.textContent = chars.charAt(newCharIndex);
-                });
-            }, stepTime);
-
+            // Helper functions
             function interpolateChar(start, end, t) {
                 return Math.round(start + (end - start) * t);
             }
 
-            function interpolateValue(start, end, t) {
-                return start + (end - start) * t;
-            }
+            function getMarginForLine(lineIndex, lineLength) {
+                // Calculate center of the viewport
+                const center = window.innerWidth / 3;
+            
+                // Calculate half of the lightning bolt's width
+                const halfBoltWidth = (lineLength * 10) / 2;
+            
+                // Calculate the margin based on the data from the margins array
+                const marginFromData = margins[lineIndex];
+            
+                // Set margin so that bolt is more centered
+                return center - halfBoltWidth + marginFromData;
+            }                        
 
-            function getRandomLineLength() {
-                return 10 + Math.floor(Math.random() * 15); // returns a random number between 10 and 25
-            }
-
-            function createNewLine() {
+            function createNewLine(lineIndex) {
                 const lineDiv = document.createElement('div');
-                lineDiv.style.marginLeft = `${Math.random() * 50}px`; // Assign a random margin to the line. You can adjust the range.
+            
+                const marginAdjustment = getMarginForLine(lineIndex, lightningShape[lineIndex]);
+                
+                lineDiv.style.marginLeft = `${marginAdjustment}px`;
+            
                 container.appendChild(lineDiv);
+                currentLineIndex++;
                 return lineDiv;
             }
+
+            // Main script logic
+            function setupLightningShape() {
+                lightningShape.forEach((lineLength, idx) => {
+                    const currentLine = createNewLine(idx);
+                    for (let i = 0; i < lineLength; i++) {
+                        const randomChar = chars.charAt(Math.floor(Math.random() * charLength));
+                        const charSpan = document.createElement('span');
+                        charSpan.textContent = randomChar;
+                        charSpan.dataset.targetChar = chars.charAt(Math.floor(Math.random() * charLength));
+                        currentLine.appendChild(charSpan);
+                    }
+                });
+            }
+
+            function startCharacterInterpolation() {
+                let currentStep = 0;
+                setInterval(() => {
+                    container.querySelectorAll('span').forEach((span) => {
+                        const currentCharIndex = chars.indexOf(span.textContent);
+                        const targetCharIndex = chars.indexOf(span.dataset.targetChar);
+            
+                        if (currentCharIndex === targetCharIndex) {
+                            // Assign a new random target character
+                            span.dataset.targetChar = chars.charAt(Math.floor(Math.random() * charLength));
+                        } else {
+                            let newCharIndex = interpolateChar(currentCharIndex, targetCharIndex, currentStep / steps);
+                            span.textContent = chars.charAt(newCharIndex);
+                        }
+                    });
+            
+                    // Increment the step count, and reset it when it reaches the total steps
+                    currentStep = (currentStep + 1) % steps;
+                }, stepTime);
+            }                  
+
+            // Initialize and start
+            let currentLineIndex = 0;
+
+            setupLightningShape();
+            startCharacterInterpolation();
         </script>
     </body>
 </html>
