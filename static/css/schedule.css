@@ -2,7 +2,7 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: 17px;
     background: rgb(200,230,201);
-    background: linear-gradient(90deg, rgba(200,230,201,1) 10%, rgba(102,187,106,1) 92%);
+    background: linear-gradient(90deg, rgb(185, 255, 187) 10%, rgba(102,187,106,1) 92%);
 }
 
 #content-container {
