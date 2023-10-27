@@ -10,7 +10,7 @@
         <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
     </head>
     <body>
-        <canvas id="canv" style="display: none;"></canvas>
+        <!-- <canvas id="canv" style="display: none;"></canvas> -->
         <div id="nav-bar">
             <a href="/" class="unset-a"><img class="logo" src="{{ url_for('static', filename='images/transparent_temp_logo.png') }}"></a>
             <div class="option-container">
@@ -86,16 +86,22 @@
                 <p><b>Sam Tenney</b></p>
             </div>
         </div>
-        <script>      //TODO Fix this           
+        <script>        
             var original = window.getComputedStyle( document.body ,null).getPropertyValue('background');  
             textArr = document.getElementsByClassName("unset-a option-text")
             textArr = Array.prototype.slice.call(textArr);
             var logoOriginial = document.getElementsByClassName("logo")[0].style.filter
+            var matrixInterval = null;
+            if (document.getElementById('canv') == null){
+                var foo = document.createElement("canvas");
+                document.body.prepend(foo);
+                foo.setAttribute("id","canv");
+                foo.setAttribute("style", "display: none;")
+            }
             function darkmode() {
                 var check = document.getElementById("darkmode-toggle");
                 const canvas = document.getElementById('canv');
                 canvas.style.display = "none"
-                let matrixInterval;
                 if (check.checked) {
                     canvas.style.display = "block"
                     document.body.style.transition = "2s";
@@ -104,7 +110,9 @@
                     textArr.forEach( function(element){
                         element.style.color = 'white'; 
                     });
-                    matrixInterval = setInterval(matrix, 60);
+                    if (matrixInterval == null){
+                        matrixInterval = setInterval(matrix, 60);
+                    }
                 } else {
                     document.getElementsByClassName("logo")[0].style.filter = logoOriginial
                     document.body.style.background = original
