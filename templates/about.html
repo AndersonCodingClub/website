@@ -6,6 +6,7 @@
         <title>About Us</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css')}}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/darktheme.css')}}">
         <link rel="icon" href="https://i.ibb.co/VYvcfLm/IMG-0369.jpg" type="image/png">
         <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
     </head>
@@ -19,6 +20,8 @@
                 <a href="/members" class="unset-a option-text">Members </a>
                 <a href="/register" class="unset-a option-text">Sign Up</a>
             </div>
+            <input type="checkbox" id="darkmode-toggle" onclick="darkmode()"/>
+            <label for="darkmode-toggle">
         </div>
 
         <div id="page-body">
@@ -50,5 +53,18 @@
 
             <img class="helpful-diagram" src="{{ url_for('static', filename='images/helpful-diagram.png') }}">
         </div>
+        <script>                
+            var original = window.getComputedStyle( document.body ,null).getPropertyValue('background');  
+            function darkmode() {
+                var check = document.getElementById("darkmode-toggle");
+                if (check.checked) {
+                    document.body.style.transition = "2s";
+                    document.body.style.background = "black";
+                } else {
+                    document.body.style.background = original
+                }
+
+            }
+        </script>
     </body>
 </html>
