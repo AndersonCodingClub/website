@@ -6,6 +6,7 @@ app = Flask(__name__)
 @app.route('/favicon.ico')
 def favicon():
     return Flask.url_for('static', filename='images/favicon.ico')
+
 @app.route('/')
 def home():
     return render_template('index.html')
