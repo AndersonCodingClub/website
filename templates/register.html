@@ -6,6 +6,7 @@
         <title>Anderson Coding</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css')}}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/darktheme.css')}}">
         <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
     </head>
     <body>
@@ -18,6 +19,8 @@
                 <a href="/members" class="unset-a option-text">Members </a>
                 <a href="/register" class="unset-a option-text">Sign Up</a>
             </div>
+            <input type="checkbox" id="darkmode-toggle" onclick="darkmode()"/>
+            <label for="darkmode-toggle">
         </div>
 
          <!-- <h1 style="margin-left: 12vw;">To join, fill out the form below</h1>  -->
@@ -25,5 +28,20 @@
             <iframe id="google-form" src="https://docs.google.com/forms/d/e/1FAIpQLScr4cckzGyf3QDkR-GuL1f4dPMnEYAVyNjHT7_4f5jXZDgFAw/viewform?usp=sf_link"></iframe>
         </div>
         <div id="page-bottom"></div>
+        <script>                
+            var original = window.getComputedStyle( document.body ,null).getPropertyValue('background');  
+            var logoOriginial = document.getElementsByClassName("logo")[0].style.filter
+            function darkmode() {
+                var check = document.getElementById("darkmode-toggle");
+                if (check.checked) {
+                    document.body.style.transition = "2s";
+                    document.body.style.background = "black";
+                    document.getElementsByClassName("logo")[0].style.filter = "brightness(100)"
+                } else {
+                    document.getElementsByClassName("logo")[0].style.filter = logoOriginial
+                    document.body.style.background = original
+                }
+            }
+        </script>
     </body>
 </html>

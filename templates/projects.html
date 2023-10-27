@@ -6,6 +6,7 @@
         <title>Anderson Coding</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/projects.css')}}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/darktheme.css')}}">
         <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
     </head>
     <body>
@@ -18,6 +19,8 @@
                 <a href="/members" class="unset-a option-text">Members </a>
                 <a href="/register" class="unset-a option-text">Sign Up</a>
             </div>
+            <input type="checkbox" id="darkmode-toggle" onclick="darkmode()"/>
+            <label for="darkmode-toggle">
         </div>
         <div class="project-container">
             <div class="project">
@@ -43,5 +46,28 @@
                     <a href="https://github.com/AndersonCodingClub/website" target=_blank font-size="bigger" class="project-link">&#8594;&nbsp;Go to Github</a>
                 </div>
         </div>
+        <script>                
+            var original = window.getComputedStyle( document.body ,null).getPropertyValue('background');  
+            textArr = document.getElementsByClassName("unset-a option-text")
+            textArr = Array.prototype.slice.call(textArr);
+            var logoOriginial = document.getElementsByClassName("logo")[0].style.filter
+            function darkmode() {
+                var check = document.getElementById("darkmode-toggle");
+                if (check.checked) {
+                    document.body.style.transition = "2s";
+                    document.body.style.background = "black";
+                    document.getElementsByClassName("logo")[0].style.filter = "brightness(100)"
+                    textArr.forEach( function(element){
+                        element.style.color = 'white'; 
+                    });
+                } else {
+                    document.getElementsByClassName("logo")[0].style.filter = logoOriginial
+                    document.body.style.background = original
+                    textArr.forEach( function(element){
+                        element.style.color = 'black'; 
+                    });
+                }
+            }
+        </script>
     </body>
 </html>

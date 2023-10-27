@@ -85,19 +85,22 @@
                 <p><b>Sam Tenney</b></p>
             </div>
         </div>
-        <script>                
+        <script>      //TODO Fix this           
             var original = window.getComputedStyle( document.body ,null).getPropertyValue('background');  
             textArr = document.getElementsByClassName("unset-a option-text")
             textArr = Array.prototype.slice.call(textArr);
-            function darkmode() { //TODO Still need to work on this
+            var logoOriginial = document.getElementsByClassName("logo")[0].style.filter
+            function darkmode() {
                 var check = document.getElementById("darkmode-toggle");
                 if (check.checked) {
                     document.body.style.transition = "2s";
                     document.body.style.background = "black";
+                    document.getElementsByClassName("logo")[0].style.filter = "brightness(100)"
                     textArr.forEach( function(element){
                         element.style.color = 'white'; 
                     });
                 } else {
+                    document.getElementsByClassName("logo")[0].style.filter = logoOriginial
                     document.body.style.background = original
                     textArr.forEach( function(element){
                         element.style.color = 'black'; 

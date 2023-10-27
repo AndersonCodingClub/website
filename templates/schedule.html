@@ -6,6 +6,7 @@
         <title>Anderson Coding</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/schedule.css')}}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/darktheme.css')}}">
         <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
         <style>
         </style>
@@ -20,6 +21,8 @@
                 <a href="/members" class="unset-a option-text">Members </a>
                 <a href="/register" class="unset-a option-text">Sign Up</a>
             </div>
+            <input type="checkbox" id="darkmode-toggle" onclick="darkmode()"/>
+            <label for="darkmode-toggle">
         </div>
 
         <div id="content-container">
@@ -27,5 +30,28 @@
                 <iframe src="https://calendar.google.com/calendar/embed?src=dcf5b36922660436b79e5079df36613dc6e7f793e6d2ebf1c8e0130ce761793f%40group.calendar.google.com&ctz=America%2FChicago" style="border: 0" width="1000" height="600" frameborder="0" scrolling="no"></iframe>        
             </div>
         </div>
+        <script>                
+            var original = window.getComputedStyle( document.body ,null).getPropertyValue('background');  
+            textArr = document.getElementsByClassName("unset-a option-text")
+            textArr = Array.prototype.slice.call(textArr);
+            var logoOriginial = document.getElementsByClassName("logo")[0].style.filter
+            function darkmode() {
+                var check = document.getElementById("darkmode-toggle");
+                if (check.checked) {
+                    document.body.style.transition = "2s";
+                    document.body.style.background = "black";
+                    document.getElementsByClassName("logo")[0].style.filter = "brightness(100)"
+                    textArr.forEach( function(element){
+                        element.style.color = 'white'; 
+                    });
+                } else {
+                    document.getElementsByClassName("logo")[0].style.filter = logoOriginial
+                    document.body.style.background = original
+                    textArr.forEach( function(element){
+                        element.style.color = 'black'; 
+                    });
+                }
+            }
+        </script>
     </body>
 </html>
