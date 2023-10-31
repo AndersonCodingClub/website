@@ -30,73 +30,7 @@
                 <iframe src="https://calendar.google.com/calendar/embed?src=dcf5b36922660436b79e5079df36613dc6e7f793e6d2ebf1c8e0130ce761793f%40group.calendar.google.com&ctz=America%2FChicago" style="border: 0" width="1000" height="600" frameborder="0" scrolling="no"></iframe>        
             </div>
         </div>
-        <script>        
-            var original = window.getComputedStyle( document.body ,null).getPropertyValue('background');  
-            textArr = document.getElementsByClassName("unset-a option-text")
-            textArr = Array.prototype.slice.call(textArr);
-            var logoOriginial = document.getElementsByClassName("logo")[0].style.filter
-            var matrixInterval = null;
-            if (document.getElementById('canv') == null){
-                var foo = document.createElement("canvas");
-                document.body.prepend(foo);
-                foo.setAttribute("id","canv");
-                foo.setAttribute("style", "display: none;")
-            }
-            function darkmode() {
-                var check = document.getElementById("darkmode-toggle");
-                const canvas = document.getElementById('canv');
-                canvas.style.display = "none"
-                if (check.checked) {
-                    canvas.style.display = "block"
-                    document.body.style.transition = "2s";
-                    document.body.style.background = "black";
-                    document.getElementsByClassName("logo")[0].style.filter = "brightness(100)"
-                    textArr.forEach( function(element){
-                        element.style.color = 'white'; 
-                    });
-                    if (matrixInterval == null){
-                        matrixInterval = setInterval(matrix, 60);
-                    }
-                } else {
-                    document.getElementsByClassName("logo")[0].style.filter = logoOriginial
-                    document.body.style.background = original
-                    textArr.forEach( function(element){
-                        element.style.color = 'black'; 
-                    });
-                    clearInterval(matrixInterval)
-                    matrixInterval = null
-                }
-            }
-        </script>
-        <script>
-            const canvas = document.getElementById('canv');
-            canvas.style.position = "absolute"
-            canvas.style.zIndex = "-1"
-            const ctx = canvas.getContext('2d');
-
-            const w = canvas.width = document.body.clientWidth;
-            const h = canvas.height = document.body.clientWidth;
-            const cols = Math.floor(w / 20) + 1;
-            const ypos = Array(cols).fill(0);
-
-            ctx.fillStyle = '#000';
-            ctx.fillRect(0, 0, w, h);
-
-            function matrix () {
-                ctx.fillStyle = '#0001';
-                ctx.fillRect(0, 0, w, h);
-                
-                ctx.fillStyle = '#0f0';
-                ctx.font = '10pt monospace';
-                
-                ypos.forEach((y, ind) => {
-                    const text = String.fromCharCode(Math.random() * 128);
-                    const x = ind * 20;
-                    ctx.fillText(text, x, y);
-                    if (y > 100 + Math.random() * 10000) ypos[ind] = 0;
-                    else ypos[ind] = y + 20;
-                });
-            }
-        </script>
+        <script src="{{url_for('static', filename='js/darkmode-toggle.js')}}"></script>
+        <script src="{{url_for('static', filename='js/matrix.js')}}"></script>
     </body>
 </html>

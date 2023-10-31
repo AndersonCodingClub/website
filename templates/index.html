@@ -34,19 +34,9 @@
                 </div>
             </div>
         </div>
-        <script>                
-            var original = window.getComputedStyle( document.body ,null).getPropertyValue('background');  
-            function darkmode() {
-                var check = document.getElementById("darkmode-toggle");
-                if (check.checked) {
-                    document.body.style.transition = "2s";
-                    document.body.style.background = "black";
-                } else {
-                    document.body.style.background = original
-                }
-
-            }
-        </script>
+        <script> var state = 2; </script>
+        <script src="{{url_for('static', filename='js/darkmode-toggle.js')}}"></script>
+        <script src="{{url_for('static', filename='js/matrix.js')}}"></script>
         <script>
             // Constants
             const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";

@@ -3,6 +3,7 @@ body {
     font-size: 17px;
     overflow: hidden;
     overflow-y: auto;
+    background-color: rgba(212, 228, 255, 1);
 }
 
 #nav-bar {
