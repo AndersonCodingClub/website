@@ -7,9 +7,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/members.css')}}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/darktheme.css')}}">
+        <link rel="icon" href="{{ url_for('static', filename='images/transparent_temp_logo.ico') }}" type="image/png">
     </head>
     <body>
-        <!-- <canvas id="canv" style="display: none;"></canvas> -->
         <div id="nav-bar">
             <a href="/" class="unset-a"><img class="logo" src="{{ url_for('static', filename='images/transparent_temp_logo.png') }}"></a>
             <div class="option-container">
@@ -85,6 +85,7 @@
                 <p><b>Sam Tenney</b></p>
             </div>
         </div>
+        <script> var state = 1; </script>
         <script src="{{url_for('static', filename='js/darkmode-toggle.js')}}"></script>
         <script src="{{url_for('static', filename='js/matrix.js')}}"></script>
     </body>

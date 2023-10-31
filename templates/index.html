@@ -7,6 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css')}}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/darktheme.css')}}">
+        <link rel="icon" href="{{ url_for('static', filename='images/transparent_temp_logo.ico') }}" type="image/png">
     </head>
     <body>
         <div id="nav-bar">
@@ -23,7 +24,7 @@
         </div>
         <div id="content-container">
             <div id="copy-container">
-                <p class="title-text">Competitive Coding— Reimagined</p>
+                <p class="title-text">Competitive Coding Reimagined</p>
                 <div class="caption-container">
                     <p class="caption-text">We are a High School team based out of Austin, Texas, changing the way teens interact with computer science.</p>
                 </div>
@@ -33,9 +34,6 @@
                 </div>
             </div>
         </div>
-        <script> var state = 2; </script>
-        <script src="{{url_for('static', filename='js/darkmode-toggle.js')}}"></script>
-        <script src="{{url_for('static', filename='js/matrix.js')}}"></script>
         <script>
             // Constants
             const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
@@ -132,5 +130,8 @@
             setupLightningShape();
             startCharacterInterpolation();
         </script>
+        <script> var state = 1; </script>
+        <script src="{{url_for('static', filename='js/darkmode-toggle.js')}}"></script>
+        <script src="{{url_for('static', filename='js/matrix.js')}}"></script>
     </body>
 </html>

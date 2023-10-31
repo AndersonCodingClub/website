@@ -7,8 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/schedule.css')}}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/darktheme.css')}}">
-        <style>
-        </style>
+        <link rel="icon" href="{{ url_for('static', filename='images/transparent_temp_logo.ico') }}" type="image/png">
     </head>
     <body>
         <div id="nav-bar">
@@ -29,6 +28,7 @@
                 <iframe src="https://calendar.google.com/calendar/embed?src=dcf5b36922660436b79e5079df36613dc6e7f793e6d2ebf1c8e0130ce761793f%40group.calendar.google.com&ctz=America%2FChicago" style="border: 0" width="1000" height="600" frameborder="0" scrolling="no"></iframe>        
             </div>
         </div>
+        <script> var state = 0; </script>
         <script src="{{url_for('static', filename='js/darkmode-toggle.js')}}"></script>
         <script src="{{url_for('static', filename='js/matrix.js')}}"></script>
     </body>
